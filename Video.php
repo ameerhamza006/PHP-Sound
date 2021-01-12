@@ -2,1011 +2,592 @@
 error_reporting(0);
 require 'header.php'; $page = "Video";
 
-if($_GET['Music-Player'])
+if($_GET['Watch'])
 {
 
 ?>
 
 
-   
+<div class="container-fluid relative animatedParent animateOnce">
+    <div class="wrapper animated fadeInUpShort p-4 mt-2">
+        <div class="row">
+            <div class="col-lg-8">
+               <?php Single_video_song_play(); ?>
+                <div class="card mt-1 ">
+                    <div class="card-body p-0">
+                        <div class="lightSlider has-items-overlay playlist"
+                             data-item="3"
+                             data-item-xl="3"
+                             data-item-lg="3"
+                             data-item-md="3"
+                             data-item-sm="1"
+                             data-auto="false"
+                             data-pager="false"
+                             data-controls="true"
+                             data-loop="false">
+                            <div>
+                                <div class="p-2 bg-primary text-white">
+                                    <h5 class="font-weight-normal s-14">Views</h5>
+                                    <span class="s-48 font-weight-lighter text-primary">140</span>
+                                    <div> Likes
+                                        <span class="text-primary">
+                                            <i class="icon icon-arrow_downward"></i> 67%</span>
+                                    </div>
+                                </div>
+                            </div>
 
-<div class="col-lg-7">
-                  <div class="iq-card iq-card-transparent  ">
-					 
-                     <div class="iq-card-body">
-                         <video src="test/2.mp4"  controls autoplay></video>
-                        <div class="player1 row">
-                           <div class="details1 col-6 col-sm-6 col-lg-6">
-                              <div class="now-playing1"></div>
-                              <div class="track-art1"></div>
-							  
-                              <div>
-                                 <div class="track-name1 text-danger">Pop Smoke</div>
-                                 <div class="track-artist1">Cascada</div>
-								  
-                              </div>
-							    
-                           </div>
-                           <div class="slider_container1 col-sm-5 col-lg-5">
-                              <div class="current-time1">00:00</div>
-                              <input type="range" min="1" max="100" value="0" class="seek_slider1" onchange="seekTo1()">
-                              <div class="total-duration1">00:00</div>
-                           </div>
-                           <div class="buttons1 col-6 col-sm-2 col-lg-3">
-                              <div class="prev-track1" onclick="prevTrack1()"><i class="fa fa-step-backward fa-2x"></i></div>
-                              <div class="playpause-track1" onclick="playpauseTrack1()"><i class="fa fa-play-circle fa-3x"></i></div>
-                              <div class="next-track1" onclick="nextTrack1()"><i class="fa fa-step-forward fa-2x"></i></div>
-                           </div>
-                           <div class="slider_container1 col-sm-4 col-lg-4">
-                              <i class="fa fa-volume-down"></i>
-                              <input type="range" min="1" max="100" value="99" class="volume_slider1" onchange="setVolume1()">
-                              <i class="fa fa-volume-up"></i>
-                           </div>
+                            <div>
+                                <div class="p-2">
+                                    <h5 class="font-weight-normal s-14">Share</h5>
+                                    <span class="s-48 font-weight-lighter amber-text">700</span>
+                                    <div>
+                                            <span class="amber-text">
+                                            <i class="icon icon-arrow_downward"></i> 34</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="p-2 light">
+                                    <h5 class="font-weight-normal s-14">Comments</h5>
+                                    <span class="s-48 font-weight-lighter text-indigo">411</span>
+                                    <div> Iron
+                                        <span class="text-indigo">
+                                            <i class="icon icon-arrow_downward"></i> 89%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="p-2">
+                                    <h5 class="font-weight-normal s-14">Likes</h5>
+                                    <span class="s-48 font-weight-lighter pink-text">224</span>
+                                    <div> Sodium
+                                        <span class="pink-text">
+                                            <i class="icon icon-arrow_downward"></i> 47%</span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
 
-               <div class="col-lg-5">
-                  <div class="iq-card iq-card-transparent">
-                     <div class="iq-card-body p-0">
-                        <ul class="list-unstyled row mb-0">
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/01.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0">Girls Like You</h6>
-                                          <small>Juice WRLD</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/02.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">Lucid Dreams</h6>
-                                          <small>Lady Gaga</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/03.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0">Better Now</h6>
-                                          <small>Beyonce</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/04.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">No Tears Left To Cry</h6>
-                                          <small>Ariana Grande</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/05.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">I Like Me Better</h6>
-                                          <small>Lauv</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/06.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">Whatever It Takes</h6>
-                                          <small>George Michael</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/07.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">In My Blood</h6>
-                                          <small>Lil Pump</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/08.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">Too Good At Goodbyes</h6>
-                                          <small>Stevie Wonder</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent mb-md-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/09.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">This Is America</h6>
-                                          <small>Drake</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-lg-6 col-md-6">
-                              <div class="iq-card iq-card-transparent mb-md-0 mb-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="media align-items-center">
-                                       <div class="iq-thumb-hotsong">
-                                          <div class="iq-music-overlay"></div>
-                                          <a href="music-player.html"><img src="images/dashboard/album-song/10.png"  class="img-fluid avatar-60" alt="">
-                                          </a>
-                                          <div class="overlay-music-icon">
-                                             <a href="music-player.html">
-                                                <i class="las la-play-circle font-size-24"></i>
-                                             </a>
-                                          </div>
-                                       </div>
-                                       <div class="media-body ml-3">
-                                          <h6 class="mb-0 iq-song-title">What Lovers Do</h6>
-                                          <small>Dolly Parton</small>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-
-
- <div class="col-lg-12">
-                  <div class="iq-card">
-                     <div class="iq-card-header d-flex justify-content-between align-items-center">
-                        <div class="iq-header-title">
-                           <h4 class="card-title">Artist</h4>
+                <div class="card mt-1 mb-5">
+                    <div class="card-body">
+                        <div class="media my-5 ">
+                            <div class="avatar avatar-md mr-3 mt-1">
+                                <img src="assets/img/demo/u7.png" alt="user">
+                            </div>
+                            <div class="media-body">
+                                <h6 class="mt-0">Ami Fro</h6>
+                                Cras sit amet nibh libero, in gravida nulla.
+                            </div>
                         </div>
-                        <div class="d-flex align-items-center iq-view">
-                           <b class="mb-0 text-primary"><a href="Artist.php?Album=Atif-Aslam">View More <i class="las la-angle-right"></i></a></b>
+                        <div class="media my-5 ">
+                            <div class="avatar avatar-md mr-3 mt-1">
+                                <img src="assets/img/demo/u6.png" alt="user">
+                            </div>
+                            <div class="media-body">
+                                <h6 class="mt-0">Sara Kamzoon</h6>
+                                vestibulum in vulputate at, tempus viverra turpis.
+                                <div class="media p-2 my-4">
+                                    <a href="#">
+                                        <div class="avatar avatar-md mr-3 mt-1">
+                                            <img src="assets/img/demo/u8.png" alt="user">
+                                        </div>
+                                    </a>
+                                    <div class="media-body">
+                                        <h6 class="mt-0">Joe Doe</h6>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                        sollicitudin.
+                                    </div>
+                                </div>
+                                <div class="media p-2 my-4">
+                                    <a href="#">
+                                        <div class="avatar avatar-md mr-3 mt-1">
+                                            <img src="assets/img/demo/u7.png" alt="user">
+                                        </div>
+                                    </a>
+                                    <div class="media-body">
+                                        <h6 class="mt-0">Find Doe
+
+                                        </h6>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                        sollicitudin.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                     <div class="iq-card-body">
-						 
-                        <ul class="list-unstyled row feature-album-artist mb-0">
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="Artist.php?Album-Play=Atif-Aslam">
-                                    <img src="images/dashboard/feature-album-artist/01.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600  mb-0">Pixie Lott</h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/02.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="Artist.php?Album-Play=Atif-Aslam">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600 mb-0">Jessie Ware</h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/03.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600  mb-0">Alesha Dixon</h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/04.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
+                        <div class="media my-5 ">
+                            <div class="avatar avatar-md mr-3 mt-1">
+                                <img src="assets/img/demo/u9.png" alt="user">
+                            </div>
 
+                            <div class="media-body">
+                                <h6 class="mt-0">Ami Fro</h6>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin. Cras purus odio, vestibulum in
+                                vulputate at, tempus viverra turpis.
+                            </div>
+                        </div>
+                        <div class="media my-5 ">
+                            <div class="avatar avatar-md mr-3 mt-1">
+                                <img src="assets/img/demo/u10.png" alt="user">
+                            </div>
+                            <div class="media-body">
+                                <h6 class="mt-0">Ami Fro </h6>
+                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                sollicitudin. Cras purus odio, vestibulum in
+                                vulputate at, tempus viverra turpis.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				  <div class="card mt-1 mb-5 post-comments my-5">
+                            
+                            <div class="card-body">
+                                <form class="form-material">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="Name"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" placeholder="Subject"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                      <textarea rows="5" class="form-control r-0"
+                                                                placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
 
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600  mb-0">Sarah Connor</h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/05.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600 mb-0">Agnes</h6>
-                              </div>
-                           </li>
-							
-                           <li class="col-lg-2 iq-music-box">
-							   
-                              <div class="iq-thumb-artist ">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/06.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600  mb-0">Rebecca</h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/07.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600 mb-0">Grace </h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/08.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center">
 
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600  mb-0">Courtney</h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/09.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600 mb-0">Billie Eilish</h6>
-                              </div>
-                           </li>
-                           <li class="col-lg-2  iq-music-box">
-                              <div class="iq-thumb-artist">
-                                 <div class="iq-music-overlay"></div>
-                                 <a href="music-player.html">
-                                    <img src="images/dashboard/feature-album-artist/10.png" class="w-100 img-fluid" alt="">
-                                 </a>
-                                 <div class="overlay-music-icon">
-                                    <a href="music-player.html">
-                                       <i class="las la-play-circle"></i>
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="feature-list text-center">
-                                 <h6 class="font-weight-600  mb-0">Normani</h6>
-                              </div>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-         
+                                        <div class="col-lg-12"><input type="submit" class="btn btn-primary r-0"
+                                                                      value="Post Comment"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
 
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card pt-3">
+                    <div class="card-header">
+                        <h6>You May Also like</h6>
+                    </div>
+                    <div class="card-header pb-0">
+                        <div class="d-flex justify-content-between">
+                            <div class="align-self-center">
+                                <ul class="nav nav-pills mb-3" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active show r-20" id="w3--tab1" data-toggle="tab"
+                                           href="#w3-tab1" role="tab" aria-controls="tab1" aria-expanded="true"
+                                           aria-selected="true">Album</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link r-20" id="w3--tab2" data-toggle="tab" href="#w3-tab2"
+                                           role="tab" aria-controls="tab2" aria-selected="false">Playlist</a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                           
 
+                        </div>
+                    </div>
+                    <div class="card-body no-p">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="w3-tab1" role="tabpanel"
+                                 aria-labelledby="w3-tab1">
+                               <?php All_videos_by_one_Album(); ?>
+                            </div>
+                            <div class="tab-pane fade " id="w3-tab2" role="tabpanel"
+                                 aria-labelledby="w3-tab2">
+                                 <div class="d-flex align-items-center mb-4 ">
+                                    <div class="col-5">
+                                        <img src="assets/img/demo/v4.jpg" alt="Card image">
+                                    </div>
+                                    <div class="ml-3">
+                                        <a href="video-single.html">
+                                            <h6>new, Sounds of Kolachi, Record Studio Season</h6>
+                                        </a>
+                                        <small class="mt-1">Record Studio</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-4 ">
+                                    <div class="col-5">
+                                        <img src="assets/img/demo/v2.jpg" alt="Card image">
+                                    </div>
+                                    <div class="ml-3">
+                                        <a href="video-single.html">
+                                            <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                                        </a>
+                                        <small class="mt-1">Record Studio</small>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+                    </div>
+                </div>
+				
+				
+                <div class="my-4">
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v5.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v1.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v6.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v7.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v8.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v9.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v10.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 ">
+                        <div class="col-5">
+                            <img src="assets/img/demo/v11.jpg" alt="Card image">
+                        </div>
+                        <div class="ml-3">
+                            <a href="video-single.html">
+                                <h6>Ilallah, Sounds of Kolachi, Record Studio Season</h6>
+                            </a>
+                            <small class="mt-1">Record Studio</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 
 <?php }else{ ?>
-
-
-<div class="col-lg-12">
-                  <div class="iq-card">
-                     <div class="iq-card-header d-flex justify-content-between">
-                        <div class="iq-header-title">
-                           <h4 class="card-title">Bollywood Songs</h4>
-                        </div>
-                        <div class="d-flex align-items-center iq-view">
-                           <b class="mb-0 text-primary"><a href="Audio.php">Back <i class="las la-angle-right"></i></a></b>
-                        </div>
-                     </div>
-                     <div class="iq-card-body">
-                        <ul class="list-unstyled row  iq-box-hover mb-0">
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card ">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="Video.php?Music-Player=Arjit-singh">
-                                          <img src="images/dashboard/popular-hindi-song/01.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="Video.php?Music-Player=Arjit-singh">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Said Sum</h6>
-                                       <p class="mb-0">Moneybagg Yo</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/02.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Toosie Slide</h6>
-                                       <p class="mb-0">Drake</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/03.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Girls In The Hood</h6>
-                                       <p class="mb-0">Megan Thee </p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/04.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Supalonely</h6>
-                                       <p class="mb-0">BENEE Featuring</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/05.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Walk Em Down</h6>
-                                       <p class="mb-0">NLE Choppa</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/06.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Blood On</h6>
-                                       <p class="mb-0">Juice WRLD</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/07.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">One Big Country</h6>
-                                       <p class="mb-0">LOCASH</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/08.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Righteous</h6>
-                                       <p class="mb-0">Juice WRLD</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-sm-0  mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/09.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Got What I Got</h6>
-                                       <p class="mb-0">Jason Aldean</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-md-0 mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/10.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">I Love My Country</h6>
-                                       <p class="mb-0">Florida Georgia</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-sm-0 mb-md-0 mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/11.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Got It On Me</h6>
-                                       <p class="mb-0">Summer Walker</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-0 mb-sm-0 mb-md-0 mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/12.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Like That</h6>
-                                       <p class="mb-0">Stefflon Don</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
+<div class="container-fluid relative animatedParent animateOnce">
+    <div class="wrapper animated fadeInUpShort p-md-5 p-3">
+		
+		<section class="section">
+            <h1 class="my-5 text-primary">Videos</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Architecto atque aut blanditiis consectetur
+            </p>
+        </section>
+		<hr style="background-color: #341920;">
+  <section class="section">
+            <div class="d-flex">
+                <div class="mb-4">
+                    <h4>You May Like</h4>
+                    <p>Checkout new recommended videos</p>
+                </div>
+            </div>
+            <div class=" no-b r-0">
+                <div class="my-3">
+                    <div class="lightSlider"
+                         data-item="3"
+                         data-item-lg="2"
+                         data-item-md="1"
+                         data-item-sm="1"
+                         data-auto="false"
+                         data-pager="false"
+                         data-controls="true"
+                         data-loop="false">
+						
+                        <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v11.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>r----Record Studio</small>
+                       </div>
+                   </div>
                </div>
-
-
-<div class="col-lg-12">
-                  <div class="iq-card">
-                     <div class="iq-card-header d-flex justify-content-between">
-                        <div class="iq-header-title">
-                           <h4 class="card-title">Hollywood Songs</h4>
-                        </div>
-                        <div class="d-flex align-items-center iq-view">
-                           <b class="mb-0 text-primary"><a href="Albums.php">Back <i class="las la-angle-right"></i></a></b>
-                        </div>
-                     </div>
-                     <div class="iq-card-body">
-                        <ul class="list-unstyled row  iq-box-hover mb-0">
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card ">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/01.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Said Sum</h6>
-                                       <p class="mb-0">Moneybagg Yo</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/02.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Toosie Slide</h6>
-                                       <p class="mb-0">Drake</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/03.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Girls In The Hood</h6>
-                                       <p class="mb-0">Megan Thee </p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/04.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Supalonely</h6>
-                                       <p class="mb-0">BENEE Featuring</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/05.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Walk Em Down</h6>
-                                       <p class="mb-0">NLE Choppa</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/06.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Blood On</h6>
-                                       <p class="mb-0">Juice WRLD</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/07.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">One Big Country</h6>
-                                       <p class="mb-0">LOCASH</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/08.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Righteous</h6>
-                                       <p class="mb-0">Juice WRLD</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-sm-0  mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/09.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Got What I Got</h6>
-                                       <p class="mb-0">Jason Aldean</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-md-0 mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/10.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">I Love My Country</h6>
-                                       <p class="mb-0">Florida Georgia</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-sm-0 mb-md-0 mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/11.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Got It On Me</h6>
-                                       <p class="mb-0">Summer Walker</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                           <li class="col-xl-2 col-lg-3 col-md-4 iq-music-box">
-                              <div class="iq-card mb-0 mb-sm-0 mb-md-0 mb-lg-0">
-                                 <div class="iq-card-body p-0">
-                                    <div class="iq-thumb">
-                                       <div class="iq-music-overlay"></div>
-                                       <a href="music-player.html">
-                                          <img src="images/dashboard/popular-hindi-song/12.png" class="img-border-radius img-fluid w-100" alt="">
-                                       </a>
-                                       <div class="overlay-music-icon">
-                                          <a href="music-player.html">
-                                             <i class="las la-play-circle"></i>
-                                          </a>
-                                       </div>
-                                    </div>
-                                    <div class="feature-list text-center">
-                                       <h6 class="font-weight-600  mb-0">Like That</h6>
-                                       <p class="mb-0">Stefflon Don</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
+						 <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v11.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
                </div>
+                       
+					 <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v11.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+						 <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v11.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+						 <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v11.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+						 <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v11.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		
+		
+		<hr style="background-color: #341920;">
+		
 
+
+  <section class="section">
+           <div class="d-flex">
+               <div class="mb-4">
+                   <h4>Latest For You</h4>
+                   <p>Checkout new recommended videos</p>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v11.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v1.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v9.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v1.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="row mt-4">
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v1.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v2.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v3.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-md-6 mb-4">
+                   <div class="card no-b">
+                       <img src="assets/img/demo/v4.jpg" alt="">
+                       <div class="p-3">
+                           <div class="mb-1">
+                               <a href="video-single.html">
+                                   <h4>Ilallah, Sounds of Kolachi, Record Studio Season</h4>
+                               </a>
+                           </div>
+                           <small>Record Studio</small>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>		
+		
+		<hr style="background-color: #341920;">
+		
+		
+		
+		
+		
+	</div>
+	</div>
 
 
 
